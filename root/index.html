@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Karla:wght@400;700&family=Markazi+Text:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,wght@0,300;1,400;1,500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/scroll.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="no-print">
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#">AR <strong>Ministries</strong></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark ">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </section>
+
+    <div class="d-flex row justify-content-center container-cards">
+      <div class="col-md-4 card1 no-print">
+        <form action="" id="formulario">
+          <div class="title__form">
+              <h2>Completa el formulario</h2>
+          </div>
+          <div class="col">
+          <select class="form-select form-select-lg mb-3" aria-label="pastores-campus" id="pastoresCampus" name="Pastores de campus">
+            <option selected value="">Pastores de Campus</option>
+            <option value="Pablo y Naty">Pablo y Naty</option>
+            <option value="Daniel y Paola">Daniel y Paola</option>
+            <option value="Nico Burgos">Nico Burgos</option>
+          </select>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <input type="text" class="form-control form-control-lg mb-3" placeholder="Lideres de Voluntarios" aria-label="text" id="lideresVoluntarios" name="Lideres de voluntarios">
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col">
+              <input type="date" class="form-control form-control-lg mb-3" placeholder="Fecha" aria-label="date" id="fecha" name="Fecha">
+            </div>
+            <div class="col">
+              <input type="time" class="form-control form-control-lg mb-3" placeholder="Hora" aria-label="time" id="hora" name="Hora">
+            </div>
+          </div>
+          <div class="col">
+          <select class="form-select form-select-lg mb-3" aria-label="modalidad" id="modalidad" name="Modalidad">
+            <option selected value="">Modalidad</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Virtual">Virtual</option>
+          </select>
+          </div>
+          <div class="col">
+          <select class="form-select form-select-lg mb-3" aria-label="campus" id="campus" name="Campus">
+            <option selected value="">Campus</option>
+            <option value="Puente Alto">Puente Alto</option>
+            <option value="Santiago">Santiago</option>
+            <option value="Montevideo">Montevideo</option>
+            <option value="Miami">Miami</option>
+            <option value="Miami(Doral)">Miami(Doral)</option>
+          </select>
+        </div>  
+          <hr>
+          <h3 class="mt-4">Asistencia</h3>
+          <div class="row g-3">
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Adultos" aria-label="adultos" id="adultos" name="Asistencia adultos">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Kids" aria-label="kids" id="kids" name="Asistencia kids">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Tweens" aria-label="tweens" id="tweens" name="Asistencia tweens">
+            </div>
+          </div>
+          <hr>
+          <h3>Voluntarios</h3>
+          <div class="row g-3">
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Servicio" aria-label="servicio" id="servicioVoluntarios" name="Voluntarios Servicio">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Tecnica" aria-label="tecnica" id="tecnicaVoluntarios" name="Voluntarios Tecnica">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Kids" aria-label="kids-voluntarios" id="kidsVoluntarios" name="Voluntarios Kids">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Tweens" aria-label="tweens-voluntarios" id="tweensVoluntarios" name="Voluntarios Tweens">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Worship" aria-label="worship-voluntarios" id="worshipVoluntarios" name="Voluntarios Worship">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Cocina" aria-label="cocina-voluntarios" id="cocinaVoluntarios" name="Voluntarios Cocina">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Redes Sociales" aria-label="redes-sociales-voluntarios" id="redesSocialesVoluntarios" name="Voluntarios Redes Sociales">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Seguridad" aria-label="seguridad-voluntarios" id="seguridadVoluntarios" name="Voluntarios Seguridad">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Sala de Bebés" aria-label="sala-bebes-voluntarios" id="salaBebesVoluntarios" name="Voluntarios sala de bebés">
+            </div>
+          </div>
+          <hr>
+          <h3>Stand</h3>
+          <div class="row g-3">
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Info" aria-label="info-voluntarios" id="infoVoluntarios" name="Stand Info">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Oracion" aria-label="oracion-voluntarios" id="oracionVoluntarios" name="Stand Oracion">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg" placeholder="Recursos" aria-label="recursos-voluntarios" id="recursosVoluntarios" name="Stand Recursos">
+            </div>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-lg" placeholder="Amor por la casa" aria-label="amor-por-la-casa-voluntarios" id="amorPorLaCasaVoluntarios" name="Stand Amor por la Casa">
+            </div>
+            <div class="col-6">
+              <input type="number" class="form-control form-control-lg" placeholder="Proyecto Educativo" aria-label="proyecto-educativo-voluntarios" id="proyectoEducativoVoluntarios" name="Stand Proyecto Educativo">
+            </div>
+            <hr>
+          </div>
+          <h3>Total General</h3>
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-primary w-100" id="calcular">Calcular</button>
+              <input type="number" class="form-control form-control-lg mb-3" placeholder="Total General" aria-label="totalAsistentes" id="totalAsistentes" name="Total Asistentes">
+            </div>
+          </div>
+          <hr>
+          <h3>Personas que aceptaron a Jesús</h3>
+          <div class="row">
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg mb-3" placeholder="Presencial" aria-label="acepta-presencial" id="aceptaPresencial" name="Acepta a Jesús Presencial">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg mb-3" placeholder="Online" aria-label="acepta-online" id="aceptaOnline" name="Acepta a Jesús Online">
+            </div>
+            <div class="col-4">
+              <input type="number" class="form-control form-control-lg mb-3" placeholder="Tweens" aria-label="acepta-tweens" id="aceptaTweens" name="Acepta a Jesús en Tweens">
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <h3>Nombre del Predicador</h3>
+              <input type="text" class="form-control form-control-lg mb-3" placeholder="Predicador" aria-label="predicador" id="nombrePredicador" name="Nombre del predicador">
+            </div>
+            <h3>Nombre del Mensaje</h3>
+            <div class="col-12">
+              <input type="text" class="form-control form-control-lg mb-3" placeholder="Mensaje" aria-label="mensaje" id="nombreMensaje" name="Mensaje">
+            </div>
+          </div>
+          <hr>
+          <h3>Observaciones</h3>
+          <div class="form-floating mb-5">
+            <textarea class="form-control" placeholder="observaciones" style="height: 100px" id="observaciones" name="Observaciones"></textarea>
+            <label for="floatingTextarea2">Observaciones</label>
+          </div>
+          <div class="mb-5 d-flex w-100">
+            <button class="btn btn-primary w-50 fs-4" type="submit" id="registrar" disabled>Registrar y Generar PDF</button>
+            <button class="w-50 btn btn-primary fs-4 ms-2" id='reset' type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+
+      <div class="col-md-4 ms-3 mb-5 card2">
+
+        <div class="face front no-print">
+          <img class="image-smile" src="./assets/img/kisspng-smiley-desktop-wallpaper-happiness-face-clip-art-5b28cadce76867.8272341015294000289479.png" alt="">
+          <h4> Descarga tu reporte </h4>
+        </div>
+
+
+        <div class="container" style=" max-width: 1020px !important;">
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

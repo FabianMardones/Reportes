@@ -1,0 +1,269 @@
+/*Definicion Variables*/
+:root{
+    --color-principal: #FFFFFF;
+    --color-secondary: #e96443;
+    --color-background: #F4F4FC;
+    --color-transparent: transparent;
+    --color-icons: #B5B7BA;
+    --color-subtitle: #888;
+    --color-title: #222222;
+    --color-text: #555;
+    --color-border-testimonials: #e5e6e7;
+    --color-company: #a5a6a7;
+}
+
+/*Estilos generales*/
+html{
+    font-size: 10px;
+
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    background-color: var(--color-background);
+    /* background-color: var(--color-title); */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-principal)
+}
+
+@media print {
+    .no-print, .no-print *{
+        display: none !important;
+    }
+}
+
+/*Imagen de fondo*/
+
+
+.bg-dark{
+    background: linear-gradient(to right,#47484f, #434655, #867975,#413e3d,#221e3a,#434248);
+    height: 7rem;
+}
+
+.bg-dark .logo{
+    font-size: 4rem;
+}
+
+.container-cards{
+    margin-top: 10rem;
+}
+
+
+.card1{
+    position: relative;
+    height: 80vh;
+    width: 30vw;
+    /* background: linear-gradient(to top left,#9DB8FF,#9DB8FF,#535b99,#4f0f56,#1c245e, #21252A, #21252A); */
+    background: linear-gradient(to bottom right,#21252A, #363d44,#904e95, #e96443); 
+    border-radius: 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.card2{
+    position: relative;
+    height: 80vh;
+    width: 50vw;
+    background: linear-gradient(to bottom right,#21252A, #363d44,#904e95, #e96443); 
+    border-radius: 2rem;
+}
+
+
+.card2 .face{
+    position: absolute;
+    display: flex;
+    width: 98%;
+    height: 90%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: auto;
+    transition: 0.5s;
+}
+
+.card2 .front{
+    opacity: 1;
+}
+
+.card2 .front img{
+    position: relative;
+    width: 30%;
+    height: 40%;
+    left: 35%;
+}
+
+.card2 .front h4{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.card2 .back {
+    opacity: 0;
+    right: 0.8rem;
+}
+
+
+.card2:hover .front{
+    opacity: 0;
+}
+
+.card2:hover .back{
+    opacity: 1;
+}
+
+input,
+textarea,
+select{
+    height: 5rem;
+}
+
+input::placeholder,
+textarea::placeholder,
+select,
+label,
+option{
+    font-size: 1.5rem;
+}
+
+#pastores-campus,
+#fecha,
+#hora
+#modalidad,
+#campus,
+#calcular{
+    font-size: 1.5rem;
+}
+
+form{
+    padding: 1.5rem;
+}
+
+
+button{
+    height: 5rem;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1090px) {
+
+    .container-cards{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .card1,
+    .card2{
+        height: 80vh;
+        width: 90vh;
+    }
+    .card2 .front img{
+        position: relative;
+        width: 30%;
+        height: 35%;
+    }
+
+    .card2 .back {
+        right: 0.7rem;
+    }
+    
+}
+
+.title__form{
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.title__form h2{
+    font-size: 5rem;
+}
+
+.image-smile{
+    position: relative;
+    width: 35rem;
+    top: 20%;
+}
+
+
+/*Iphone 12 pro 11 SE*/
+@media (max-width: 844px) and (max-height: 390px) {
+    .card1,
+    .card2{
+        height: 100vh;
+        width: 70vw;
+    }
+  }
+
+  /*Samsung Galaxy Ultra*/
+
+@media (max-width: 920px) and (max-height: 420px) {
+    .card1,
+    .card2{
+        height: 100vh;
+        width: 80vw;
+    }
+  }
+
+@media (max-width: 700px) {
+    .card1,
+    .card2{
+        height: 80vh;
+        width: 90%;
+    }
+    .card2 .front img{
+        position: relative;
+        width: 30%;
+        height: 30%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .card1,
+    .card2{
+        height: 80vh;
+        width: 90%;
+    }
+    .face .front img{
+        right: 5rem;
+    }
+
+    .card2 .back {
+        right: 0.3rem;
+    }
+
+    .card2 .front img{
+        position: relative;
+        width: 30%;
+        height: 30%;
+    }
+}
+
+@media (max-width: 500px){
+    .card2{
+        right: 0.5rem;
+    }
+
+    .card2 .back {
+        right: 0.3rem;
+    }
+
+    .card2 .front img{
+        position: relative;
+        width: 30%;
+        height: 25%;
+    }
+}
+
+
