@@ -1,13 +1,7 @@
-function print_document(){
-    window.print()
-}
-
-
-
 function print_canvas(){
   const element = document.getElementById('contenido')
   html2pdf().set({
-      margin:     0,
+      margin:     2,
       filename:   'ReporteEncuentro.pdf',
       image:      { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
@@ -15,9 +9,6 @@ function print_canvas(){
   }).from(element).save().catch(error=>console.log(error));
 }
 
-
-
-const formulario = document.querySelector('#formulario')
 
 const pastoresCampus = document.querySelector('#pastoresCampus')
 const lideresVoluntarios = document.querySelector('#lideresVoluntarios')
@@ -56,13 +47,22 @@ const nombreMensaje = document.querySelector('#nombreMensaje')
 
 const obervaciones = document.querySelector('#observaciones')
 
-const btnCalular = document.querySelector('#calcular')
+const botonCalcular = document.querySelector('#calcular')
 
 const btnSubmit = document.querySelector('#registrar')
 
 const btnReset = document.querySelector('#reset')
 
 const containerDoc = document.querySelector('.container')
+
+const card2 = document.querySelector('.card2')
+const face = document.querySelector('.face')
+const front = document.querySelector('.front')
+const formulario = document.querySelector('#formulario')
+const card1 = document.querySelector('.card1')
+const containerCards = document.querySelector('.container-cards')
+
+
 
 const objetoForm = {
   pastoresCampus: '',
@@ -96,7 +96,6 @@ const objetoForm = {
   nombreMensaje: '',
   observaciones: ''
 }
-
 
 function agruparEventListener(){
     pastoresCampus.addEventListener('blur',validacion)
@@ -137,7 +136,7 @@ function agruparEventListener(){
 
     obervaciones.addEventListener('blur', validacion)
 
-    btnCalular.addEventListener('click', calcularTotalAsistencia)
+    botonCalcular.addEventListener('click', calcularTotalAsistencia)
 
     btnReset.addEventListener('reset', (e) =>{
         e.preventDefault()
@@ -151,7 +150,7 @@ function agruparEventListener(){
 agruparEventListener()
 
 
-
+let contenidoGenerado = false
 
 function registrarDatos(e){
   e.preventDefault()
@@ -214,11 +213,12 @@ function registrarDatos(e){
     <div>
       <span><b>Pastores de campus</b></span>
       <br>
-      <span>${objetoForm.pastoresCampus}</span>
+      <span class="pastores">${objetoForm.pastoresCampus}</span>
     </div>
   </div>
 
 <h4 style="color: black; margin-top: 0;">Asistencia</h4>
+    <hr>
     <table class="table table-bordered table-striped">
       <thead>
         <th>Adultos</th>
@@ -233,9 +233,11 @@ function registrarDatos(e){
         </tr>
       </tbody>
     </table>
+    <hr>
     <br>
 
     <h4 style="color: black;">Voluntarios</h4>
+    <hr>
     <table class="table table-bordered table-striped">
       <thead>
         <th>Servcio</th>
@@ -262,9 +264,11 @@ function registrarDatos(e){
         </tr>
       </tbody>
     </table>
+    <hr>
     <br>
 
     <h4 style="color: black;">Stand</h4>
+    <hr>
     <table class="table table-bordered table-striped">
       <thead>
         <th>Info</th>
@@ -283,9 +287,11 @@ function registrarDatos(e){
         </tr>
       </tbody>
     </table>
+    <hr>
     <br>
 
     <h4 style="color: black;">Total General</h4>
+    <hr>
     <table class="table table-bordered table-striped">
       <thead>
         <th>Total</th>
@@ -296,8 +302,11 @@ function registrarDatos(e){
         </tr>
       </tbody>
     </table>
+    <hr>
+    <br>
 
     <h4 style="color: black;">Personas que aceptaron a Jesús</h4>
+    <hr>
     <table class="table table-bordered table-striped">
       <thead>
         <th>Presencial</th>
@@ -312,6 +321,8 @@ function registrarDatos(e){
         </tr>
       </tbody>
     </table>
+    <br>
+    <hr>
 
       <div>
         <div>
@@ -327,10 +338,10 @@ function registrarDatos(e){
         </div>
       </div>
 
-      <h4 style="color: black;">Obersvaciones</h4>
+      <h4 style="color: black;">Observaciones</h4>
       <table class="table table-bordered table-striped">
         <thead>
-          <th>Objervaciones</th>
+          <th>Observaciones</th>
         </thead>
         <tbody>
           <tr>
@@ -338,13 +349,49 @@ function registrarDatos(e){
           </tr>
         </tbody>
       </table>
+      <hr>
 </div>
 </div>
   `
+      const registerPeople = peopleRef.push()
+    registerPeople.set({
+      Uid : registerPeople.path.pieces_[1],
+      Fecha: objetoForm.fecha,
+      Hora: objetoForm.hora,
+      Modalidad: objetoForm.modalidad,
+      Campus: objetoForm.campus,
+      Pastores_de_campus: objetoForm.pastoresCampus,
+      Lideres_voluntarios: objetoForm.lideresVoluntarios,
+      Asistencia_adultos: objetoForm.adultos,
+      Asistencia_kids: objetoForm.kids,
+      Asistencia_tweens: objetoForm.tweens,
+      Asistencia_voluntarios: objetoForm.servicioVoluntarios,
+      Asistencia_tecnica: objetoForm.tecnicaVoluntarios,
+      Asistencia_voluntarios_kids: objetoForm.kidsVoluntarios,
+      Asistencia_voluntarios_tweens: objetoForm.tweensVoluntarios,
+      Asistencia_worship: objetoForm.worshipVoluntarios,
+      Asistencia_cocina: objetoForm.cocinaVoluntarios,
+      Asistencia_redes_sociales: objetoForm.redesSocialesVoluntarios,
+      Asistencia_seguridad: objetoForm.seguridadVoluntarios,
+      Asistencia_voluntarios_sala_de_bebes: objetoForm.salaBebesVoluntarios,
+      Stand_info: objetoForm.infoVoluntarios,
+      Stand_oracion: objetoForm.oracionVoluntarios,
+      Stand_recursos: objetoForm.recursosVoluntarios,
+      Stand_amor_por_la_casa: objetoForm.amorPorLaCasaVoluntarios,
+      Stand_proyecto_educativo: objetoForm.proyectoEducativoVoluntarios,
+      Total_asistentes: objetoForm.totalAsistentes,
+      Acepta_a_jesus_presencial: objetoForm.aceptaPresencial,
+      Acepta_a_jesus_online: objetoForm.aceptaOnline,
+      Acepta_a_jesus_tweens: objetoForm.aceptaTweens,
+      Nombre_predicador: objetoForm.nombrePredicador,
+      Nombre_mensaje: objetoForm.nombreMensaje,
+      Observaciones: objetoForm.observaciones
+    })
+
+  document.getElementById('mensajeInicial').textContent = 'El informe está listo';
+  contenidoGenerado = true
+  card2.style.display = 'block';
 }
-
-
-
 
 function validacion(e){
   e.preventDefault()
@@ -405,7 +452,7 @@ function mensajeAlerta(mensaje, referencia){
 
 function eliminarMensajeAlerta(referencia){
   const alerta = referencia.querySelector('.alerta')
-  
+
   if(alerta){
     alerta.remove()
   }
@@ -483,3 +530,24 @@ function resetearFormulario(){
 
   formulario.reset()
 }
+
+
+function ocultarCard2(){
+  const windowWidth = window.innerWidth;
+
+  if (windowWidth <= 1090 && !contenidoGenerado) {
+    card2.style.display = 'none';
+  } else {
+    card2.style.display = 'block';
+  }
+}
+
+
+window.addEventListener('resize', () => {
+  ocultarCard2()
+});
+
+document.addEventListener('DOMContentLoaded', () =>{
+  ocultarCard2()
+})
+

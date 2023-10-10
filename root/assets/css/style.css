@@ -13,24 +13,31 @@
 }
 
 /*Estilos generales*/
+
 html{
     font-size: 10px;
+}
 
+  body {
+    width: 100%;
+    height: 100vh; /* Ajusta la altura para que cubra toda la pantalla */
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-text)
 }
 
 body{
-    width: 100%;
-    height: 100%;
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    background-color: var(--color-background);
-    /* background-color: var(--color-title); */
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6{
-    color: var(--color-principal)
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -1px -140px;
 }
 
 @media print {
@@ -41,39 +48,72 @@ h1, h2, h3, h4, h5, h6{
 
 /*Imagen de fondo*/
 
-
-.bg-dark{
-    background: linear-gradient(to right,#47484f, #434655, #867975,#413e3d,#221e3a,#434248);
-    height: 7rem;
+.nav-edit{
+    height: 10rem;
+    background-color: #F3EEE8;
 }
 
-.bg-dark .logo{
-    font-size: 4rem;
+.nav-position-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
+.nav-link{
+    position: relative;
+    right: 100%;
+}
+
 
 .container-cards{
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
+
 
 
 .card1{
     position: relative;
-    height: 80vh;
+    height: 70vh;
     width: 30vw;
     /* background: linear-gradient(to top left,#9DB8FF,#9DB8FF,#535b99,#4f0f56,#1c245e, #21252A, #21252A); */
-    background: linear-gradient(to bottom right,#21252A, #363d44,#904e95, #e96443); 
+    background: linear-gradient(to bottom right,#21252a30, #363d4438,#904e953b, #e9644327); 
     border-radius: 2rem;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+.btn-calcular{
+    background-color: transparent;
+    color: var(--color-title);
+    font-weight: bold;
+    border: 3px solid var(--color-text);
+    border-radius: 15px;
+    margin-bottom: 3px;
+
+}
+.btn-calcular:hover{
+    background-color: rgba(240, 87, 82, 0.51);
+    color: var(--color-principal);
+    font-weight: bold;
+    border: 2px solid var(--color-background);
+    border-radius: 15px;
+}
+
+.dark .btn-enviar,
+.dark .btn-calcular{
+    border: 3px solid var(--color-principal);
+    color: var(--color-principal);
+}
+
 
 .card2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    height: 80vh;
+    height: 70vh;
     width: 50vw;
-    background: linear-gradient(to bottom right,#21252A, #363d44,#904e95, #e96443); 
-    border-radius: 2rem;
+    background: linear-gradient(to bottom right,#21252a30, #363d4438,#904e953b, #e9644327);     border-radius: 2rem;
 }
 
 
@@ -89,24 +129,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .card2 .front{
-    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-.card2 .front img{
-    position: relative;
+.card2 .front h3{
+    font-size: 5rem;
     width: 30%;
     height: 40%;
-    left: 35%;
-}
-
-.card2 .front h4{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    background: rgba(0, 0, 0, .4);
-    text-align: center;
 }
 
 .card2 .back {
@@ -127,6 +160,11 @@ input,
 textarea,
 select{
     height: 5rem;
+    font-size: 12px;
+}
+
+textarea{
+    resize: none;
 }
 
 input::placeholder,
@@ -134,7 +172,7 @@ textarea::placeholder,
 select,
 label,
 option{
-    font-size: 1.5rem;
+    font-size: 15px;
 }
 
 #pastores-campus,
@@ -143,11 +181,11 @@ option{
 #modalidad,
 #campus,
 #calcular{
-    font-size: 1.5rem;
+    font-size: 12px;
 }
 
 form{
-    padding: 1.5rem;
+    padding-left: 2.5rem;
 }
 
 
@@ -156,9 +194,103 @@ button{
     font-weight: bold;
 }
 
+.oculto{
+    visibility: hidden;
+}
+
+.title__form{
+    margin: 5rem 0;
+    text-align: center;
+}
+
+
+.image-smile{
+    position: relative;
+    width: 35rem;
+    top: 20%;
+}
+
+.dark-light-mode_button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    top: 14rem;
+    border-radius: 0 3rem 3rem 0;
+    background: linear-gradient(to bottom right,#21252a30, #363d4438,#904e953b, #e9644327);
+    transition: padding 300ms ease-in-out;
+}
+
+.dark-light-mode_button:hover {
+    cursor: pointer;
+    padding: 3rem 4rem;
+}
+
+.button__shadow{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.fa-moon,
+.fa-sun {
+    position: absolute;
+    left: -1.5rem;
+    font-size: 3rem;
+    color: var(--color-background);
+    transition: color 300ms ease-in-out; /* Aplicar transición a la propiedad color */
+}
+
+.fa-moon{
+    color: var(--color-text);
+}
+
+.fa-moon:hover {
+    color: var(--color-title);
+}
+
+.fa-sun:hover {
+    color: gold;
+}
+
+
+.dark{
+    background-color: black;
+}
+
+.dark .dark-light-mode_button {
+    background: linear-gradient(to bottom right,#21252a, #363d44,#904e9543, #e9644375); 
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6{
+    color:var(--color-background);
+}
+
+.dark .card1,
+.dark .card2{
+    background: linear-gradient(to bottom right,#21252a, #363d44,#904e9543, #e9644375); 
+}
+
+.dark .nav-edit{
+    background-color: var(--color-title);
+}
+
+.dark strong{
+    color: var(--color-background);
+}
+
+.dark .botonD{
+    background-color: var(--color-background);
+}
+
 
 @media (max-width: 1090px) {
-
     .container-cards{
         flex-direction: column-reverse;
         align-items: center;
@@ -177,24 +309,14 @@ button{
     .card2 .back {
         right: 0.7rem;
     }
-    
-}
+    .margen{
+        padding: 1rem;
+    }
+    .dark-light-mode_button:hover {
+        padding: 3rem 2.5rem; /* Mantener el padding fijo en la media query */
+    }
 
-.title__form{
-    margin: 5rem 0;
-    text-align: center;
 }
-
-.title__form h2{
-    font-size: 5rem;
-}
-
-.image-smile{
-    position: relative;
-    width: 35rem;
-    top: 20%;
-}
-
 
 /*Iphone 12 pro 11 SE*/
 @media (max-width: 844px) and (max-height: 390px) {
@@ -221,11 +343,6 @@ button{
         height: 80vh;
         width: 90%;
     }
-    .card2 .front img{
-        position: relative;
-        width: 30%;
-        height: 30%;
-    }
 }
 
 
@@ -235,22 +352,27 @@ button{
         height: 80vh;
         width: 90%;
     }
-    .face .front img{
-        right: 5rem;
+
+    .card2{
+        right: 0.5rem;
     }
 
     .card2 .back {
-        right: 0.3rem;
+        right: 0.5rem;
     }
 
-    .card2 .front img{
+    .card2 .face h3{
         position: relative;
-        width: 30%;
-        height: 30%;
+        text-align: center;
+        right: 2.5rem;
     }
 }
 
 @media (max-width: 500px){
+
+    body::before{
+        top: 10rem;
+    }
     .card2{
         right: 0.5rem;
     }
@@ -259,10 +381,8 @@ button{
         right: 0.3rem;
     }
 
-    .card2 .front img{
-        position: relative;
-        width: 30%;
-        height: 25%;
+    .card1{
+        left: 0.2%;
     }
 }
 

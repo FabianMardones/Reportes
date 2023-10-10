@@ -2,66 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Karla:wght@400;700&family=Markazi+Text:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,wght@0,300;1,400;1,500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
 <link rel="stylesheet" href="./assets/css/scroll.css">
 <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-
     <section class="no-print">
-        <nav class="navbar navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
-              <a class="navbar-brand logo" href="#">AR <strong>Ministries</strong></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-dark ">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                          <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <form class="d-flex mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg nav-edit">
+        <div class="container-fluid">
+          <h3 class="navbar-brand ar fs-3" href="#">ar <strong>ministries</strong></h3>
+          <button class="navbar-toggler botonD" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav-position-links" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active fs-3" aria-current="page" href="#"><strong class="strong">App</strong></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </section>
+
+    
+  <div class="dark-light-mode_button switch">
+    <div class="button__shadow">
+        <i class="fa fa-solid fa-moon luna"></i>
+        <i class="fa fa-solid fa-sun oculto sol"></i>
+    </div>
+  </div>
 
     <div class="d-flex row justify-content-center container-cards">
       <div class="col-md-4 card1 no-print">
         <form action="" id="formulario">
           <div class="title__form">
-              <h2>Completa el formulario</h2>
+              <h2 class="fs-1">Registro <strong>Encuentro</strong></h2>
           </div>
           <div class="col">
           <select class="form-select form-select-lg mb-3" aria-label="pastores-campus" id="pastoresCampus" name="Pastores de campus">
@@ -168,7 +157,7 @@
           <h3>Total General</h3>
           <div class="row">
             <div class="col-12">
-              <button class="btn btn-primary w-100" id="calcular">Calcular</button>
+              <button class="btn w-100 btn-calcular fs-3" id="calcular">Calcular</button>
               <input type="number" class="form-control form-control-lg mb-3" placeholder="Total General" aria-label="totalAsistentes" id="totalAsistentes" name="Total Asistentes">
             </div>
           </div>
@@ -199,22 +188,22 @@
           <hr>
           <h3>Observaciones</h3>
           <div class="form-floating mb-5">
-            <textarea class="form-control" placeholder="observaciones" style="height: 100px" id="observaciones" name="Observaciones"></textarea>
+            <textarea class="form-control" placeholder="observaciones" style="height: 100px; padding: 2.5rem 1rem; font-size: 12px;" id="observaciones" name="Observaciones"></textarea>
             <label for="floatingTextarea2">Observaciones</label>
           </div>
+          
           <div class="mb-5 d-flex w-100">
-            <button class="btn btn-primary w-50 fs-4" type="submit" id="registrar" disabled>Registrar y Generar PDF</button>
-            <button class="w-50 btn btn-primary fs-4 ms-2" id='reset' type="reset">Reset</button>
+            <button class="btn w-50 fs-4 btn-enviar btn-calcular" type="submit" id="registrar" disabled>Registrar y Generar PDF</button>
+            <button class="w-50 btn fs-4 ms-2 btn-resetear btn-calcular" id='reset' type="reset">Reset</button>
           </div>
         </form>
       </div>
 
 
-      <div class="col-md-4 ms-3 mb-5 card2">
+      <div class="col-md-4 ms-3 mb-5 card2" id="card2">
 
         <div class="face front no-print">
-          <img class="image-smile" src="./assets/img/kisspng-smiley-desktop-wallpaper-happiness-face-clip-art-5b28cadce76867.8272341015294000289479.png" alt="">
-          <h4> Descarga tu reporte </h4>
+          <h3 id="mensajeInicial">Aquí estará tu <strong>reporte</strong></h3>
         </div>
 
 
@@ -227,6 +216,13 @@
       </div>
     </div>
 
+    <div class="margen">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+    <script src="./darkMode.js"></script>
     <script src="./app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
