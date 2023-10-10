@@ -1,3 +1,4 @@
+
 function print_canvas(){
   const element = document.getElementById('contenido')
   html2pdf().set({
@@ -8,6 +9,7 @@ function print_canvas(){
       jsPdf:       { unit: 'in', format: 'letter', orientation: 'portrait' }
   }).from(element).save().catch(error=>console.log(error));
 }
+
 
 
 const pastoresCampus = document.querySelector('#pastoresCampus')
@@ -353,41 +355,6 @@ function registrarDatos(e){
 </div>
 </div>
   `
-      const registerPeople = peopleRef.push()
-    registerPeople.set({
-      Uid : registerPeople.path.pieces_[1],
-      Fecha: objetoForm.fecha,
-      Hora: objetoForm.hora,
-      Modalidad: objetoForm.modalidad,
-      Campus: objetoForm.campus,
-      Pastores_de_campus: objetoForm.pastoresCampus,
-      Lideres_voluntarios: objetoForm.lideresVoluntarios,
-      Asistencia_adultos: objetoForm.adultos,
-      Asistencia_kids: objetoForm.kids,
-      Asistencia_tweens: objetoForm.tweens,
-      Asistencia_voluntarios: objetoForm.servicioVoluntarios,
-      Asistencia_tecnica: objetoForm.tecnicaVoluntarios,
-      Asistencia_voluntarios_kids: objetoForm.kidsVoluntarios,
-      Asistencia_voluntarios_tweens: objetoForm.tweensVoluntarios,
-      Asistencia_worship: objetoForm.worshipVoluntarios,
-      Asistencia_cocina: objetoForm.cocinaVoluntarios,
-      Asistencia_redes_sociales: objetoForm.redesSocialesVoluntarios,
-      Asistencia_seguridad: objetoForm.seguridadVoluntarios,
-      Asistencia_voluntarios_sala_de_bebes: objetoForm.salaBebesVoluntarios,
-      Stand_info: objetoForm.infoVoluntarios,
-      Stand_oracion: objetoForm.oracionVoluntarios,
-      Stand_recursos: objetoForm.recursosVoluntarios,
-      Stand_amor_por_la_casa: objetoForm.amorPorLaCasaVoluntarios,
-      Stand_proyecto_educativo: objetoForm.proyectoEducativoVoluntarios,
-      Total_asistentes: objetoForm.totalAsistentes,
-      Acepta_a_jesus_presencial: objetoForm.aceptaPresencial,
-      Acepta_a_jesus_online: objetoForm.aceptaOnline,
-      Acepta_a_jesus_tweens: objetoForm.aceptaTweens,
-      Nombre_predicador: objetoForm.nombrePredicador,
-      Nombre_mensaje: objetoForm.nombreMensaje,
-      Observaciones: objetoForm.observaciones
-    })
-
   document.getElementById('mensajeInicial').textContent = 'El informe está listo';
   contenidoGenerado = true
   card2.style.display = 'block';
