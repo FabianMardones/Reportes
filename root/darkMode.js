@@ -9,7 +9,6 @@ const sol = document.querySelector('.sol')
 function agruparEventListener() {
     document.addEventListener('DOMContentLoaded', (() =>{
         cargarModoOscuro()
-        actualizarYear()
     }));
     switchMode.addEventListener('click', cambiarModo);
 }

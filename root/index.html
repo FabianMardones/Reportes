@@ -17,7 +17,7 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <span class="navbar-text">
-            Navbar text with an inline element
+            Genera tus reportes <i class="fa-solid fa-face-smile"></i>
           </span>
         </div>
       </nav>
@@ -38,8 +38,8 @@
       </nav>
     </section>
 
-    
-  <div class="dark-light-mode_button switch">
+
+  <div class="dark-light-mode_button switch no-print">
     <div class="button__shadow">
         <i class="fa fa-solid fa-moon luna"></i>
         <i class="fa fa-solid fa-sun oculto sol"></i>
@@ -48,22 +48,43 @@
 
     <div class="d-flex row justify-content-center container-cards">
       <div class="col-md-4 card1 no-print">
-        <form action="" id="formulario">
+
+        <form method="post" id="formulario" class="formularioForm">
           <div class="title__form">
               <h2 class="fs-1">Registro <strong>Encuentro</strong></h2>
           </div>
           <div class="col">
           <select class="form-select form-select-lg mb-3" aria-label="pastores-campus" id="pastoresCampus" name="Pastores de campus">
             <option selected value="">Pastores de Campus</option>
-            <option value="Pablo y Naty">Pablo y Naty</option>
-            <option value="Daniel y Paola">Daniel y Paola</option>
-            <option value="Nico Burgos">Nico Burgos</option>
+            <option value="Pablo y Naty">Pablo & Naty</option>
+            <option value="Daniel & Pao">Daniel & Pao</option>
+            <option value="Patricio & Evelyn">Patricio & Evelyn</option>
+            <option value="Rodrigo & Priscilla">Rodrigo & Priscilla</option>
           </select>
           </div>
-          <div class="row g-3">
-            <div class="col">
-              <input type="text" class="form-control form-control-lg mb-3" placeholder="Lideres de Voluntarios" aria-label="text" id="lideresVoluntarios" name="Lideres de voluntarios">
-            </div>
+          <div class="col">
+          <select class="form-select form-select-lg mb-3" aria-label="ministrs-encargados" id="ministrosEncargados" name="Ministros Encargados">
+            <option selected value="">Ministros Encargados</option>
+            <option value="Darwdin & Jenny">Darwdin & Jenny</option>
+            <option value="Kevin & Auge">Kevin & Auge</option>
+            <option value="Philip & Maria Jose">Philip & Maria Jose</option>
+            <option value="Coke & Karen">Coke & Karen</option>
+          </select>
+          </div>
+          <div class="col">
+            <select class="form-select form-select-lg mb-3" placeholder="Lideres de Voluntarios" id="lideresVoluntarios" name="Lideres de voluntarios">
+              <option selected value="">Lideres de Voluntariado</option>
+              <option value="Rodrigo & Kathy">Rodrigo & Kathy</option>
+              <option value="Mario & Mirta">Mario & Mirta</option>
+              <option value="Cesar y Nora">Cesar y Nora</option>
+              <option value="Miguel & Paula">Miguel & Paula</option>
+              <option value="Cesar & Gishlaine">Cesar & Gishlaine</option>
+              <option value="Josué & Rocío">Josué & Rocío</option>
+              <option value="Javier & Anita">Javier & Anita</option>
+              <option value="Felipe & Alison">Felipe & Alison</option>
+              <option value="Romina Basil">Romina Basil</option>
+              <option value="Daniela Valladares">Daniela Valladares</option>
+            </select>
           </div>
           <div class="row g-3">
             <div class="col">
@@ -89,7 +110,7 @@
             <option value="Miami">Miami</option>
             <option value="Miami(Doral)">Miami(Doral)</option>
           </select>
-        </div>  
+          </div>
           <hr>
           <h3 class="mt-4">Asistencia</h3>
           <div class="row g-3">
@@ -175,13 +196,23 @@
             </div>
           </div>
           <hr>
+          <div class="col">
+            <select class="form-select form-select-lg mb-3" aria-label="predicador" placeholder="Predicador" id="nombrePredicador" name="Nombre del predicador">
+              <option selected value="">Predicadores</option>
+              <option value="Pastor Patricio Fernando Burgos">Pastor Patricio Fernando Burgos</option>
+              <option value="Pastorita Patricia Alarcón">Pastorita Patricia Alarcón</option>
+              <option value="Pastor Nico Burgos">Pastor Nico Burgos</option>
+              <option value="Pastor Patricio Andres Burgos">Pastor Patricio Andres Burgos</option>
+              <option value="Pastora Evelyn Fuentes">Pastora Evelyn Fuentes</option>
+              <option value="Pastor Rodrigo Quiroz">Pastor Rodrigo Quiroz</option>
+              <option value="Pastora Pri">Pastora Pri</option>
+              <option value="Pastor Pablo Encina">Pastor Pablo Encina</option>
+              <option value="Pastora Naty Segura">Pastora Naty Segura</option>
+            </select>
+          </div>
           <div class="row">
             <div class="col-12">
-              <h3>Nombre del Predicador</h3>
-              <input type="text" class="form-control form-control-lg mb-3" placeholder="Predicador" aria-label="predicador" id="nombrePredicador" name="Nombre del predicador">
-            </div>
-            <h3>Nombre del Mensaje</h3>
-            <div class="col-12">
+              <h3>Nombre del Mensaje</h3>
               <input type="text" class="form-control form-control-lg mb-3" placeholder="Mensaje" aria-label="mensaje" id="nombreMensaje" name="Mensaje">
             </div>
           </div>
@@ -219,13 +250,12 @@
     <div class="margen">
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./darkMode.js"></script>
     <script src="./app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
